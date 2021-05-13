@@ -1,0 +1,218 @@
+html{
+    font-family:Verdana;
+}
+
+body{
+    margin:0;
+}
+
+.nav_bar {
+    margin: auto;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    background-color: #000;
+    align-items: stretch;
+}
+
+.nav_emergency{
+    padding: 8px 16px;
+    float: right;
+    background-color: red;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.nav_emergency:hover{
+    background-color: white;
+    color: red;
+}
+
+.nav_home{
+    padding: 8px 16px;
+    float: left;
+    background-color: inherit;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_home:hover{
+    background-color: grey;
+    color: white;
+}
+
+.nav_contact{
+    padding: 8px 16px;
+    float: left;
+    background-color: inherit;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.nav_contact:hover{
+    background-color: grey;
+    color: white;
+}
+
+.nav_services{
+    padding: 8px 16px;
+    float: left;
+    background-color: inherit;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.nav_services:hover{
+    background-color: grey;
+    color: white;
+}
+
+.nav_covid{
+    padding: 8px 16px;
+    float: left;
+    background-color: inherit;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_covid:hover{
+    background-color: grey;
+    color: white;
+}
+
+#logo {
+    float:left;
+    border:none;
+    width:6%;
+    padding: 8px 8px;
+}
+
+#profile_img {
+    float:right;
+    border:none;
+    width:6%;
+    padding: 8px 8px;
+}
+
+#profile_text {
+    float:right;
+    text-decoration:none;
+    display:inline-block;
+}
+#heading {
+    display:inline-block;
+    text-align:center;
+}
+
+ul{
+    margin: auto;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+    color: black;
+    background-color: white;
+}
+
+li{
+    padding: 8px 16px;
+    float:right;
+    text-decoration:none;
+    background-color: inherit;
+    color: white;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#item {
+    color:black;
+    text-decoration:none;
+}
+
+#item:hover{
+    color:rgb(43, 182, 43);
+}
+
+#check_in {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(43, 182, 43);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#check_in span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#check_in span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#check_in:hover span {
+  padding-right: 25px;
+}
+
+#check_in:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#para1{
+    font-size:20px;
+    padding:10px;
+
+}
+
+#profile_img{
+    cursor:pointer;
+}
