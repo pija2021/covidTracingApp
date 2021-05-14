@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='stylesheet' href='stylesheet.css'>
+        <script src="map.js"></script>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiXt0Si0cf07jLt-CHeCiwO5lFrUZtkxg&callback=initMap&libraries=&v=weekly"
+        async></script>
     </head>
 
     <body>
@@ -22,16 +26,24 @@
                     <a href="home_page.html">Home</a>
                     <a href="services.html">Services</a>
                     <a href="contact.html">Contact</a>
-                    <a href="emergency.html" style='float:right'>Do you have an Emergency?</a>
+                    <a href="emergency.html" class='nav_emergency'>Do you have an Emergency?</a>
                  </nav>
             </header>
 
             <!-- content goes in main -->
             <main>
+                <!-- Google map api-->
+                <div>
+                    <h3>Google map</h3>
+                    <!--The div element for the map -->
+                    <div id="map"></div>
+                </div>
+
                 <p>
                     To keep the community covid-19 safe, check in to all the locations/venues that
                     you visit so that we can effecitevly trace if any case/s arise/s.
                 </p>
+
                 <p> press the 'Check-In' button to check in any venue by scanning the QR code or by manually
                     entring the venue code.
                 </p>

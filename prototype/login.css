@@ -1,15 +1,13 @@
-html{
-    font-family:Verdana;
-}
 
-#logo{
+
+#login_logo{
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 18%;
 }
 
-header {
+login header {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -17,12 +15,12 @@ header {
   text-align:center;
 }
 
-.signin_label{
+.login_signin_label{
     display: block;
     text-align:center;
 }
 
-input {
+.login input {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -31,17 +29,17 @@ input {
   margin-bottom:5px;
 }
 
-p {
+.login p {
     text-align:center;
 }
 
-.signin_button_div{
+.login_signin_button_div{
     display: grid;
 
     padding:15px;
 }
 
-.heading{
+.login_heading{
     color: green;
     font-family: Verdana, serif;
     font-size: 100px;
@@ -53,7 +51,7 @@ p {
     text-shadow: 0 1px 1px #fff;
 }
 
-.signin_button {
+.login_signin_button {
   border-radius: 4px;
   background-color: rgb(43, 182, 43);
   border: none;
@@ -68,7 +66,7 @@ p {
 }
 
 
-.signin_button:active {
+.login_signin_button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);

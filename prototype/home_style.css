@@ -17,23 +17,13 @@ body{
 }
 
 .nav_emergency{
-    padding: 8px 16px;
-    float: right;
-    background-color: red;
-    color: inherit;
-    width: auto;
-    border: none;
-    outline: none;
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-
+    float: right!important;
+    background-color: red!important;
 }
 
 .nav_emergency:hover{
-    background-color: white;
-    color: red;
+    background-color: white!important;
+    color: red!important;
 }
 
 .nav_home{
@@ -158,12 +148,22 @@ li{
     cursor: pointer;
 }
 
+
 #item {
     color:black;
     text-decoration:none;
 }
 
 #item:hover{
+    color:rgb(43, 182, 43);
+}
+
+#serviceitem{
+    color:black;
+    text-decoration:none;
+}
+
+#serfice:hover{
     color:rgb(43, 182, 43);
 }
 
@@ -215,4 +215,14 @@ li{
 
 #profile_img{
     cursor:pointer;
+}
+
+#contactpage > li{
+    position: relative;
+    display: block;
+}
+
+#contactformitems{
+    position: relative;
+    display: block;
 }

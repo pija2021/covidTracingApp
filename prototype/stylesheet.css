@@ -29,6 +29,16 @@
     align-items: stretch;
 }
 
+.nav_emergency{
+    float: right!important;
+    background-color: red!important;
+}
+
+.nav_emergency:hover{
+    background-color: white!important;
+    color: red!important;
+}
+
 .app {
     font-family:Verdana;
     margin:0;
@@ -136,3 +146,85 @@ main > p {
   opacity: 1;
   right: 0;
 }
+
+
+
+#login_logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 18%;
+}
+
+.login header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size:20px;
+  text-align:center;
+}
+
+.login_signin_label{
+    display: block;
+    text-align:center;
+}
+
+.login input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.login p {
+    text-align:center;
+}
+
+.login_signin_button_div{
+    display: grid;
+
+    padding:15px;
+}
+
+.login_heading_text{
+    color: green;
+    font-family: Verdana, serif;
+    font-size: 100px;
+    line-height: 100px;
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+}
+
+.login_signin_button {
+  border-radius: 4px;
+  background-color: rgb(43, 182, 43);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+}
+
+
+.login_signin_button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
