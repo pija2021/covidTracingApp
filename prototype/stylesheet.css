@@ -12,6 +12,7 @@
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+
 }
 
 .nav_bar > a:hover {
@@ -27,6 +28,7 @@
     color: #fff;
     background-color: #000;
     align-items: stretch;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
 }
 
 .nav_emergency{
@@ -58,6 +60,7 @@
 #headertitlelogo > h1 {
     display:inline-block;
     text-align:center;
+    text-shadow: 2px 2px 2px rgba(87,87,87,0.67);
 }
 
 #logo_img {
@@ -75,7 +78,13 @@ footer > ul {
     width: 100%;
     overflow: hidden;
     color: black;
-    background-color: white;
+    /*background-color: white;*/
+    background: rgba(76, 175, 80, 0)
+}
+
+footer {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #85FF98 100%, #00FF09 100%);
+    float:bottom;
 }
 
 footer > ul > li {
@@ -154,6 +163,7 @@ main > p {
   margin-left: auto;
   margin-right: auto;
   width: 18%;
+
 }
 
 .login header {
@@ -197,7 +207,7 @@ main > p {
     margin-bottom: 0px;
     margin-top: 40px;
     text-align: center;
-    text-shadow: 0 1px 1px #fff;
+    text-shadow: 2px 2px 2px rgba(87,87,87,0.67);
 }
 
 .login_signin_button {
@@ -227,4 +237,5 @@ main > p {
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
   }
