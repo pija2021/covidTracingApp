@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="home_style.css">
+<html lang='en'>
+    <head>
+        <title>Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='stylesheet.css'>
+    </head>
 
-<body>
+    <body>
+        <div class='app'>
+            <header>
+                <div id=headertitlelogo>
+                <img id = "logo_img" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
+                <h1 id = "heading">CONTACT TRACING</h1>
+                <img id = "profile_img" src = "https://i.redd.it/v0caqchbtn741.jpg" alt="profile picture">
+                </div>
 
-    <header>
-        <div>
-            <img id = "logo" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
-            <h1 id = "heading">CONTACT TRACING</h1>
-            <img id = "profile_img" src = "https://i.redd.it/v0caqchbtn741.jpg" alt="profile picture">
-            <!--<figcaption><a id = "profile_text" href= "profile.html">profile</a></figcaption>-->
-        </div>
-        <nav class="nav_bar">
-            <a href="covid" class="nav_covid">COVID-19</a>
-            <a href="home_page.html" class="nav_home">Home</a>
-            <a href="services.html" class="nav_services">Services</a>
-            <a href="contact.html" class="nav_contact">Contact</a>
-            <a href="contact.html" class="nav_emergency">Do you have an Emergency?</a>
-          </nav>
-    </header>
 
-    <main>
-        <div>
-            <div id="para1">
+                <nav class="nav_bar">
+                    <a href="aboutcovid.html">About COVID-19</a>
+                    <a href="home_page.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="emergency.html" style='float:right'>Do you have an Emergency?</a>
+                 </nav>
+            </header>
+
+            <!-- content goes in main -->
+            <main>
                 <p>
                     To keep the community covid-19 safe, check in to all the locations/venues that
                     you visit so that we can effecitevly trace if any case/s arise/s.
@@ -32,19 +35,19 @@
                 <p> press the 'Check-In' button to check in any venue by scanning the QR code or by manually
                     entring the venue code.
                 </p>
-            </div>
-            <button id="check_in"><span>Check In</span></button>
+                <button id="check_in"><span>Check In</span></button>
+            </main>
+
+            <footer>
+                <hr>
+                <ul>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="services.html">services</a></li>
+                    <li><a href="team.html">team</a></li>
+                </ul>
+            </footer>
         </div>
-    </main>
+    </body>
 
-    <footer>
-        <hr>
-        <ul>
-            <li><a id = "item" href="contact.html">contact</a></li>
-            <li><a id = "item" href="services.html">services</a></li>
-            <li><a id = "item" href="team">team</a></li>
-        </ul>
-    </footer>
 
-</body>
 </html>
