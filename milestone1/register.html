@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src = "login.js"></script>
+    <title>Register</title>
+</head>
+
+
+<body>
+    <div class=login>
+        <header>
+            <span class = "login_heading_text">covid check in</span>
+        </header>
+        <hr>
+        <div>
+            <img id = "login_logo" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
+
+            <p class="login_signin_label">
+                Register
+            </p>
+
+            <p>First Name</p>
+
+            <input type="text" id="login_id" name="first_name" required minlength="3" maxlength="10" >
+
+            <p>Last Name</p>
+
+            <input type="text" id="login_password" name="last_name" required minlength="3" maxlength="10" >
+
+            <p>Email Address</p>
+
+            <input type="text" id="login_id" name="email" required minlength="3" maxlength="10" >
+
+            <p>Address</p>
+
+            <input type="text" id="login_id" name="address" required minlength="3" maxlength="10" >
+
+            <p>City</p>
+
+            <input type="text" id="login_id" name="city" required minlength="3" maxlength="10" >
+
+            <p>State</p>
+
+            <input type="text" id="login_id" name="state" required minlength="3" maxlength="10" >
+
+            <p>Phone Number</p>
+
+            <input type="text" id="login_id" name="ph_number" required minlength="3" maxlength="10" >
+
+            <p>Date of Birth</p>
+
+            <input type="Date" id="login_id" name="DOB" required >
+
+            <div class = "login_signin_button_div">
+
+                <button class="login_signin_button" onclick ="login()"><span>Sign-in</span></button>
+
+            </div>
+
+            <span id="or">----or----</span>
+
+            <div class = "login_signin_button_div">
+
+                <button class="login_signin_button" onclick ="login_first()"><span>Register</span></button>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>

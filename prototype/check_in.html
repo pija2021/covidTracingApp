@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
     <head>
-        <title>Services</title>
+        <title>default</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='stylesheet' href='stylesheet.css'>
@@ -28,14 +28,36 @@
 
             <!-- content goes in main -->
             <main>
-                <div>
-                    <h1>Services</h1>
-                    <ul>
-                        <li><a href="/locatescreening"></a>Locate screening facility</li>
-                        <li><a href="/additionalresources"></a>Additional resources</li>
-                        <li><a href="/updaterisk"></a>Update risk states</li>
-                        <li><a href="/help"></a>Help</li>
-                    </ul>
+                <div id = "container">
+
+                    <div class = "scan_checkin">
+
+                        <div id="qr_container">
+                            <h1>QR Code Scanner</h1>
+
+                            <a id="btn-scan-qr">
+                                <img src="https://uploads.sitepoint.com/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+                            <a/>
+
+                            <canvas hidden="" id="qr-canvas"></canvas>
+
+                            <div id="qr-result" hidden="">
+
+
+                            <b>Data:</b> <span id="outputData"></span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "line">
+                    </div>
+
+                    <div class = "input_checkin">
+                        <p>Enter the venue code:</p>
+                        <input type="text" id="id" name="first_name" required minlength="3" maxlength="10" >
+                    </div>
+
                 </div>
             </main>
 
