@@ -1,0 +1,335 @@
+.nav_bar > a {
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 16px;
+    float: left;
+    background-color: inherit;
+    color: inherit;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.nav_bar > a:hover {
+    background-color: grey;
+    color: white;
+}
+
+.nav_bar {
+    margin: auto;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    background-color: #000;
+    align-items: stretch;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+}
+
+.nav_emergency{
+    float: right!important;
+    background-color: red!important;
+}
+
+.nav_emergency:hover{
+    background-color: white!important;
+    color: red!important;
+}
+
+.app {
+    font-family:Verdana;
+    margin:0;
+}
+
+.app > p {
+    font-size:20px;
+    padding:10px;
+}
+
+#headertitlelogo > img {
+    border:none;
+    width:6%;
+    padding: 8px 8px;
+}
+
+#headertitlelogo > h1 {
+    display:inline-block;
+    text-align:center;
+    text-shadow: 2px 2px 2px rgba(87,87,87,0.67);
+}
+
+#logo_img {
+    float:left;
+}
+
+#profile_img {
+    float:right;
+}
+
+footer > ul {
+    margin: auto;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+    color: black;
+    /*background-color: white;*/
+    background: rgba(76, 175, 80, 0)
+}
+
+footer {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #85FF98 100%, #00FF09 100%);
+    float:bottom;
+}
+
+footer > ul > li {
+    padding: 8px 16px;
+    float:right;
+    text-decoration:none;
+    background-color: inherit;
+    color: white;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+footer > ul > li > a {
+    color:black;
+    text-decoration:none;
+}
+
+footer > ul > li > a:hover {
+    color:rgb(43, 182, 43);
+}
+
+main > p {
+    font-size:20px;
+    padding:10px;
+}
+
+#check_in {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(43, 182, 43);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#check_in span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#check_in span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#check_in:hover span {
+  padding-right: 25px;
+}
+
+#check_in:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#login_logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 18%;
+
+}
+
+.login header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size:20px;
+  text-align:center;
+}
+
+.login_signin_label{
+    display: block;
+    text-align:center;
+}
+
+.login_id {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.login input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.login p {
+    text-align:center;
+}
+
+.login_signin_button_div{
+    display: grid;
+    padding:15px;
+}
+
+.login_heading_text{
+    color: green;
+    font-family: Verdana, serif;
+    font-size: 100px;
+    line-height: 100px;
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(87,87,87,0.67);
+}
+
+.login_signin_button {
+  border-radius: 4px;
+  background-color: rgb(43, 182, 43);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+}
+
+
+.login_signin_button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#or {
+  display:grid;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+  }
+
+#info {
+    margin: 20px;
+}
+
+#info_list{
+    margin: 20px;
+    padding: 8px;
+    text-decoration:none;
+    color: black;
+    width: auto;
+    border: none;
+    outline: none;
+    border-left: 6px solid green;
+    margin-left: -3px;
+    list-style-type: none;
+}
+
+.line {
+  border-left: 6px solid green;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 250px;
+}
+
+
+#qr-canvas {
+  margin: auto;
+  width: calc(100% - 20px);
+  max-width: 400px;
+}
+
+#btn-scan-qr {
+  cursor: pointer;
+}
+
+#btn-scan-qr img {
+  height: 10em;
+  padding: 0px;
+  margin: 0px;
+  background: white;
+}
+
+#qr-result {
+  font-size: 1.2em;
+  margin: auto;
+  padding: 0px;
+  max-width: 700px;
+  background-color: white;
+}
+
+.scan_checkin {
+    margin-top:50px;
+    margin-left:200px;
+    float:left;
+}
+
+.input_checkin {
+    margin-top:150px;
+    margin-right:300px;
+    float:right;
+}
+
+.contacts_box input{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+    margin-top: 20px;
+    border-radius:15px;
+    font-size:150%;
+}
+
+.contacts_message {
+    height:400px;
+    width:70%;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+}
+
+.contacts_box p {
+    text-align:center;
+}
