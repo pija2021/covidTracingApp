@@ -1,5 +1,18 @@
+var username="root"
+var password="toor"
+
 function login(){
-    window.location = "home_page.html";
+    usr_name = document.getElementById("login_id").value
+    pass = document.getElementById("login_password").value
+
+    if (usr_name==username && pass==password)
+    {
+        window.location = "home_page.html";
+    }
+    else
+    {
+        alert("Incorrect login details, please try again.");
+    }
 }
 
 function login_first(){
