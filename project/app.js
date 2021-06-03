@@ -12,7 +12,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+//setting login page as default
+app.use(express.static(path.join(__dirname, 'public'),{index:'login.html'}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
