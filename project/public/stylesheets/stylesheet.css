@@ -85,6 +85,7 @@ footer > ul {
 footer {
     background: linear-gradient(to bottom, #FFFFFF 0%, #85FF98 100%, #00FF09 100%);
     float:bottom;
+    text-align: center;
 }
 
 footer > ul > li {
