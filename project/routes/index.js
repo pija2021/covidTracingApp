@@ -1,14 +1,22 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "",
+  password: ""
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
-
-router.get('/test', function(req,res){
-  res.send("working");
 });
 
 //used to make new check in history
