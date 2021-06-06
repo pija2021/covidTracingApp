@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="javascripts\html5-qrcode.min.js"></script>
+
+</head>
+
+<body>
+  <h1>Express</h1>
+  <p>Welcome to Express</p>
+  <div id="reader"></div>
+
+  <script>
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+        
+function onScanSuccess(qrCodeMessage) {
+    // handle on success condition with the decoded message
+    window.open(qrCodeMessage, '_blank');
+    html5QrcodeScanner.clear();
+    // ^ this will stop the scanner (video feed) and clear the scan area.
+}
+
+html5QrcodeScanner.render(onScanSuccess);
+      </script>
+
+</body>
+
+</html>
