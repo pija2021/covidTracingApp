@@ -11,6 +11,7 @@
     "express": "~4.16.1",
     "express-session": "^1.17.2",
     "google-auth-library": "^7.1.1",
+    "html5-qrcode": "^2.0.6",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1"
   }
