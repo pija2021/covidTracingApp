@@ -1,5 +1,7 @@
+/*
 var username="root";
 var password="toor";
+*/
 
 /*function login(){
     usr_name = document.getElementById("login_id").value;
@@ -15,11 +17,12 @@ var password="toor";
     }
 }*/
 
+/*
 function login(){
 
     let user = {
-        user: document.getElementById('username').value,
-        pass: document.getElementById('password').value
+        user: document.getElementById('login_id').value,
+        pass: document.getElementById('login_password').value
     };
 
     // Create AJAX Request
@@ -41,6 +44,7 @@ function login(){
     xmlhttp.send(JSON.stringify(user));
 
 }
+*/
 
 /*function logout(){
 
@@ -63,7 +67,7 @@ function login(){
 
 }*/
 
-
+/*
 function onSignIn(googleUser) {
 
     // Read the token data on the client side
@@ -83,6 +87,7 @@ function onSignIn(googleUser) {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert("Welcome "+this.responseText);
+            window.location = "login.html";
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
         }
@@ -94,7 +99,7 @@ function onSignIn(googleUser) {
     xmlhttp.send(JSON.stringify(id_token));
 
 }
-
+*/
 
 //whats this?
 function login_first(){

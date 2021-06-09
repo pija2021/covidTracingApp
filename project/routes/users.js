@@ -13,7 +13,16 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-let users = {
+
+
+
+
+
+
+
+
+
+/*let users = {
     test: 'password',
     test2: 'p2'
 };
@@ -52,7 +61,7 @@ router.post('/login', function(req, res, next) {
 
 });
 
-/*router.post('/logout', function(req, res, next) {
+router.post('/logout', function(req, res, next) {
 
     delete req.session.user;
     res.send();
