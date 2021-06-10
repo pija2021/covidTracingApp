@@ -1,3 +1,8 @@
+.login_body{
+    padding:0;
+    margin:0;
+}
+
 .nav_bar > a {
     list-style-type: none;
     margin: 0;
@@ -162,7 +167,7 @@ main > p {
   margin-left: auto;
   margin-right: auto;
   width: 18%;
-
+  border-radius:50%;
 }
 
 .login header {
@@ -171,6 +176,7 @@ main > p {
   margin-right: auto;
   font-size:20px;
   text-align:center;
+  background-color:black;
 }
 
 .login_signin_label{
@@ -178,10 +184,20 @@ main > p {
     text-align:center;
 }
 
+.login_body{
+    width: auto;
+    height: auto;
+    background-image: url("../bg.jpg");
+}
+
 .login_id {
     margin-left: auto;
     margin-right: auto;
 
+}
+
+.login hr{
+    margin-top:0;
 }
 
 .login input {
@@ -195,6 +211,13 @@ main > p {
 
 .login p {
     text-align:center;
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.login h2{
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .login_signin_button_div{
@@ -203,7 +226,7 @@ main > p {
 }
 
 .login_heading_text{
-    color: green;
+    color: white;
     font-family: Verdana, serif;
     font-size: 100px;
     line-height: 100px;
@@ -233,6 +256,10 @@ main > p {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.login_signin_button:hover{
+    background-color: rgb(27,117,28);
 }
 
 #or {
