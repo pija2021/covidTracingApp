@@ -15,24 +15,18 @@
             </header>
             <hr>
             <div>
-                <img id = "login_logo" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
-                <h2 class="login_signin_label">
-                    Sign-in
-                </h2>
-                <p>Email/ID</p>
-                <input type="text" id="login_id" name="name" required minlength="3" maxlength="10" >
-                <p>Password</p>
-                <input type="password" id="login_password" name="name" required minlength="3" maxlength="10" >
-                <div class = "login_signin_button_div">
-                    <button class="login_signin_button" onclick ="login()"><span>Sign-in</span></button>
-                </div>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-                <div class = "login_signin_button_div">
-                    <button class="login_signin_button" onclick ="register()"><span>Register</span></button>
-                </div>
+            <img id = "login_logo" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
+            <h1>Login Form</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+
             </div>
         </div>
 
     </body>
 </html>
+
