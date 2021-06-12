@@ -75,7 +75,7 @@ CREATE TABLE `Customer` (
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (1,'test','test','test','test','test@gmail.com','test',412345678,NULL);
+INSERT INTO `Customer` VALUES (1,'test','test','John','Smith','johnsmith@gmail.com','123 Fake St',412345678,NULL);
 /*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `Hotspot`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Hotspot` (
   `id` int NOT NULL,
-  `Official` int DEFAULT NULL,
+  `Official` INT NOT NULL,
   `Venue` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
