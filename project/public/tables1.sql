@@ -55,7 +55,9 @@ DROP TABLE IF EXISTS `Customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Customer` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `First_Name` varchar(50) DEFAULT NULL,
   `Last_Name` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
@@ -64,7 +66,7 @@ CREATE TABLE `Customer` (
   `History` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +75,7 @@ CREATE TABLE `Customer` (
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (1,'John','Smith','johnsmith1@gmail.com','22 Rose St Rosewater',412345678,NULL);
+INSERT INTO `Customer` VALUES (1,'test','test','test','test','test@gmail.com','test',412345678,NULL);
 /*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,32 +215,7 @@ INSERT INTO `Venue` VALUES (1,'GongCha','40 Hindley St',NULL);
 /*!40000 ALTER TABLE `Venue` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `accounts`
---
 
-DROP TABLE IF EXISTS `accounts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `accounts` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `accounts`
---
-
-LOCK TABLES `accounts` WRITE;
-/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,'test','test','test@test.com');
-/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
