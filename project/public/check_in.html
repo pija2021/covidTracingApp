@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='stylesheet' href='/stylesheets/stylesheet.css'>
+        <script src="javascripts\html5-qrcode.min.js"></script>
     </head>
 
     <body>
@@ -36,7 +37,7 @@
                             <h1>QR Code Scanner</h1>
 
                             <a id="btn-scan-qr">
-                                <img src="https://uploads.sitepoint.com/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+                                <div id="reader"></div>
                             <a/>
 
                             <canvas hidden="" id="qr-canvas"></canvas>
@@ -72,6 +73,20 @@
                 </ul>
             </footer>
         </div>
+
+        <script>
+            var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+                
+        function onScanSuccess(qrCodeMessage) {
+            // handle on success condition with the decoded message
+            window.open(qrCodeMessage, '_blank');
+            html5QrcodeScanner.clear();
+            // ^ this will stop the scanner (video feed) and clear the scan area.
+        }
+        
+        html5QrcodeScanner.render(onScanSuccess);
+              </script>
     </body>
 
 
