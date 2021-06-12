@@ -19,6 +19,8 @@
 -- Current Database: `tables`
 --
 
+DROP DATABASE IF EXISTS tables;
+
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `tables` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 USE `tables`;
@@ -48,13 +50,13 @@ INSERT INTO `AddressLine` VALUES (1,'123 Fake St');
 UNLOCK TABLES;
 
 --
--- Table structure for table `Customer`
+-- Table structure for table `User`
 --
 
-DROP TABLE IF EXISTS `Customer`;
+DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Customer` (
+CREATE TABLE `User` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -70,13 +72,15 @@ CREATE TABLE `Customer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Customer`
+-- Dumping data for table `User`
 --
 
-LOCK TABLES `Customer` WRITE;
-/*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (1,'test','test','John','Smith','johnsmith@gmail.com','123 Fake St',412345678,NULL);
-/*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
+
+
+LOCK TABLES `User` WRITE;
+/*!40000 ALTER TABLE `User` DISABLE KEYS */;
+INSERT INTO `User` VALUES (1,'test', 'test123','John','Smith','johnsmith@gmail.com','123 Fake St',412345678,NULL);
+/*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -112,7 +116,7 @@ DROP TABLE IF EXISTS `Hotspot`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Hotspot` (
   `id` int NOT NULL,
-  `Official` INT NOT NULL,
+  `Official` INT,
   `Venue` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
