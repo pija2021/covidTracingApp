@@ -158,7 +158,7 @@ ADD FOREIGN KEY (VenueID) REFERENCES Venue(id);
 
 LOCK TABLES `History` WRITE;
 /*!40000 ALTER TABLE `History` DISABLE KEYS */;
-INSERT INTO `History` (id,UserID,VenueID,Date_Time) VALUES (1,2,1, now());
+INSERT INTO `History` (id,UserID,VenueID,Date_Time) VALUES (1,1,1, now()); -- User John went to Venue Gongcha at the time...
 /*!40000 ALTER TABLE `History` ENABLE KEYS */;
 UNLOCK TABLES;
 
