@@ -80,8 +80,7 @@
 
         function onScanSuccess(qrCodeMessage) {
             // handle on success condition with the decoded message
-            window.open(qrCodeMessage, '_blank');
-            html5QrcodeScanner.clear();
+            alert("scan success\n" + qrCodeMessage);
             // ^ this will stop the scanner (video feed) and clear the scan area.
         }
 
