@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var path = require('path');
 
 
 
@@ -9,7 +10,7 @@ var connection = mysql.createConnection({
 	database : 'tables'
 });
 
-con.connect(function(err) {
+connection.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
@@ -36,6 +37,11 @@ router.post('/auth', function(req, res, next) {
 });
 
 
+router.get('/home', function(req,res){
+  res.sendFile(path.resolve('public/home_page.html'));
+});
+
+
 //used to make new check in history
 router.post('/history/new', function(req,res){
 
@@ -48,7 +54,7 @@ router.get('/history', function(req,res){
 
 //used to acquire users profile json
 router.get('/profile', function(req,res){
-    con.query("SELECT * FROM User", function (err, result, fields) {
+    connection.query("SELECT * FROM User", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
@@ -61,7 +67,7 @@ router.post('/profile/update', function(req,res){
 
 //used to get hotspots for map
 router.get('/hotspot', function(req,res){
-  con.query("SELECT * FROM Hotspot", function (err, result, fields) {
+  connection.query("SELECT * FROM Hotspot", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
@@ -69,7 +75,7 @@ router.get('/hotspot', function(req,res){
 
 //used to add more hotspots or to remove
 router.post('/hotspot/update', function(req,res){
-  con.query("INSERT INTO `Hotspot` VALUES (2,NULL,'Home');", function (err, result, fields) {
+  connection.query("INSERT INTO `Hotspot` VALUES (2,NULL,'Home');", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
@@ -82,7 +88,7 @@ router.post('/contactmessage/new', function(req,res){
 
 //gets address
 router.get('/address', function(req,res){
-  con.query("SELECT * FROM AddressLine", function (err, result, fields) {
+  connection.query("SELECT * FROM AddressLine", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
@@ -90,7 +96,7 @@ router.get('/address', function(req,res){
 
 //create new address
 router.post('/address/new', function(req,res){
-  con.query("INSERT INTO AddressLine VALUES (AdelaideUni)", function (err, result, fields) {
+  connection.query("INSERT INTO AddressLine VALUES (AdelaideUni)", function (err, result, fields) {
       if (err) throw err;
       console.log(result);
     });
