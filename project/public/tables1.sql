@@ -34,7 +34,11 @@ DROP TABLE IF EXISTS `AddressLine`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AddressLine` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `Address` varchar(50) DEFAULT NULL,
+  `Street_Number` int DEFAULT NULL,
+  `Street_Name` varchar(50) DEFAULT NULL,
+  `City` varchar(50) DEFAULT NULL,
+  `State` varchar(2) DEFAULT NULL,
+  `ZIP_Code`INT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -45,11 +49,11 @@ CREATE TABLE `AddressLine` (
 
 LOCK TABLES `AddressLine` WRITE;
 /*!40000 ALTER TABLE `AddressLine` DISABLE KEYS */;
-INSERT INTO `AddressLine` VALUES (1,'123 Fake St'); -- User
-INSERT INTO `AddressLine` VALUES (2,'456 Ram St'); -- Manager
-INSERT INTO `AddressLine` VALUES (3,'78 Apple St'); -- Official
-INSERT INTO `AddressLine` VALUES (4,'91 Gong St'); -- Gongcha Venue
-INSERT INTO `AddressLine` VALUES (5,'99 Veg St'); -- Subway Venue that is hotspot
+INSERT INTO `AddressLine` VALUES (1, '11', 'Eastern Parade', 'Ottoway', 'SA', '5013'); -- User
+INSERT INTO `AddressLine` VALUES (2, '22', 'Rose St', 'Prospect', 'SA', '5082'); -- Manager
+INSERT INTO `AddressLine` VALUES (3, '33', 'Fifth St', 'Bowden', 'SA', '5007'); -- Official
+INSERT INTO `AddressLine` VALUES (4, '6', 'Rundle Mall', 'Adelaide', 'SA', '5000'); -- Gongcha Venue
+INSERT INTO `AddressLine` VALUES (5, '16', 'Hindley St', 'Adelaide', 'SA', '5000'); -- Subway Venue that is hotspot
 /*!40000 ALTER TABLE `AddressLine` ENABLE KEYS */;
 UNLOCK TABLES;
 
