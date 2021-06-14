@@ -170,14 +170,6 @@ main > p {
   border-radius:50%;
 }
 
-.abcRioButton.abcRioButtonLightBlue { margin: 0 auto;}
-
-.login h1{
-    text-align: center;
-    color:white;
-    text-shadow: 1px 1px black;
-}
-
 .login header {
   display: block;
   margin-left: auto;
@@ -368,4 +360,8 @@ main > p {
 
 .contacts_box p {
     text-align:center;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
