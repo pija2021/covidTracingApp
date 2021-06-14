@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "",
-  password: "",
-	database: 'tables'
+
+
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	database : 'tables'
 });
 
 con.connect(function(err) {
@@ -14,11 +14,27 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.post('/auth', function(req, res, next) {
+    var username = req.body.username;
+	var password = req.body.password;
+	if (username && password) {
+	    var query = "SELECT * FROM User WHERE username=? AND password=?";
+		connection.query(query, [username, password], function(error, results, fields) {
+			if (results.length > 0) {
+				req.session.loggedin = true;
+				req.session.username = username;
+				res.redirect('/home');
+			} else {
+				res.send('Incorrect Username and/or Password!');
+			}
+			res.end();
+		});
+	} else {
+		res.send('Please enter Username and Password!');
+		res.end();
+	}
 });
+
 
 //used to make new check in history
 router.post('/history/new', function(req,res){
@@ -81,7 +97,7 @@ router.post('/address/new', function(req,res){
 });
 
 //delete address
-router.post('/adress/delete', function(req,res){
+router.post('/address/delete', function(req,res){
 
 });
 
