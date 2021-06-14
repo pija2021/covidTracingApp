@@ -1,7 +1,4 @@
 
-}
-
-
 //whats this?
 function login_first(){
     window.location = "login.html";
