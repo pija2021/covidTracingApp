@@ -1,9 +1,9 @@
-/*
+
 var username="root";
 var password="toor";
-*/
 
-/*function login(){
+
+function login(){
     usr_name = document.getElementById("login_id").value;
     pass = document.getElementById("login_password").value;
 
@@ -15,7 +15,7 @@ var password="toor";
     {
         alert("Incorrect login details, please try again.");
     }
-}*/
+}
 
 
 //whats this?

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang='en'>
     <head>
-        <title>Homepage</title>
+        <title>Emergency</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='stylesheet' href='/stylesheets/stylesheet.css'>
-        <script src="/javascript/map.js"></script>
-        <script src='/javascript/login.js'></script>
-        <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiXt0Si0cf07jLt-CHeCiwO5lFrUZtkxg&callback=initMap&libraries=&v=weekly"
-        async></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     </head>
 
     <body>
         <div class='app'>
-            <header>
+            <header class>
                 <div id=headertitlelogo>
                 <img id = "logo_img" src="https://www.sibenco.com/wp-content/uploads/2020/06/COVIDsafe-app.png" >
                 <h1 id = "heading">CONTACT TRACING</h1>
@@ -33,24 +29,36 @@
                  </nav>
             </header>
 
+
+
             <!-- content goes in main -->
+            <p>Call 000 in case of emergency</p>
             <main>
-                <!-- Google map api-->
-                <div>
-                    <h3>Covid Hotspots</h3>
-                    <!--The div element for the map -->
-                    <div id="map"></div>
-                </div>
 
-                <p>
-                    To keep the community covid-19 safe, check in to all the locations/venues that
-                    you visit so that we can effectively trace if any case/s arise/s.
-                </p>
+            <h1>History</h1>
 
-                <p> press the 'Check-In' button to check in any venue by scanning the QR code or by manually
-                    entring the venue code.
-                </p>
-                <button id="check_in" onclick='check_in()'><span>Check In</span></button>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            Location
+                        </th>
+                        <th>
+                            Date/Time
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>Bob's Bakery</td>
+                        <td>11/07/2021,10:30AM</td>
+                        <td>250, Grote Street</td>
+                    </tr>
+                </table>
+            </div>
+
             </main>
 
             <footer>
