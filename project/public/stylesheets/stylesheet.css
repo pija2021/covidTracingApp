@@ -371,3 +371,9 @@ table, th, td {
     margin-right:auto;
     display:block;
 }
+
+button#app {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
