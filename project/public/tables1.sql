@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS `AddressLine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `AddressLine` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `Address` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,13 +45,52 @@ CREATE TABLE `AddressLine` (
 
 LOCK TABLES `AddressLine` WRITE;
 /*!40000 ALTER TABLE `AddressLine` DISABLE KEYS */;
-INSERT INTO `AddressLine` VALUES (1,'123 Fake St');
+INSERT INTO `AddressLine` VALUES (1,'123 Fake St'); -- User
+INSERT INTO `AddressLine` VALUES (2,'456 Ram St'); -- Manager
+INSERT INTO `AddressLine` VALUES (3,'78 Apple St'); -- Official
+INSERT INTO `AddressLine` VALUES (4,'91 Gong St'); -- Gongcha Venue
+INSERT INTO `AddressLine` VALUES (5,'99 Veg St'); -- Subway Venue that is hotspot
 /*!40000 ALTER TABLE `AddressLine` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+--
+-- Table structure for table `Venue`
+--
+
+DROP TABLE IF EXISTS `Venue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Venue` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) DEFAULT NULL,
+  `AddressID` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Venue`
+--
+
+ALTER TABLE Venue
+ADD FOREIGN KEY (AddressID) REFERENCES AddressLine(id);
+
+ LOCK TABLES `Venue` WRITE;
+/*!40000 ALTER TABLE `Venue` DISABLE KEYS */;
+ INSERT INTO `Venue` VALUES (1,'GongCha',4);
+ INSERT INTO `Venue` VALUES (2,'Subway',5);
+/*!40000 ALTER TABLE `Venue` ENABLE KEYS */;
+ UNLOCK TABLES;
+
+
+
 
 --
 -- Table structure for table `User`
 --
+
+
 
 DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -63,25 +102,34 @@ CREATE TABLE `User` (
   `First_Name` varchar(50) DEFAULT NULL,
   `Last_Name` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
-  `Address` varchar(50) DEFAULT NULL,
+  `AddressID` int NOT NULL,
+  `DOB` date,
   `Contact` int NOT NULL,
-  `History` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `User`
 --
 
+ALTER TABLE User
+ADD FOREIGN KEY (AddressID) REFERENCES AddressLine(id);
 
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'test', 'test123','John','Smith','johnsmith@gmail.com','123 Fake St',412345678,NULL);
+INSERT INTO `User`
+       (`username`,`password`, `First_Name`, `Last_Name`, `Email`,              `AddressID`, `DOB`,            `Contact`)
+VALUES ('test',    'test123', 'John',        'Smith',     'johnsmith@gmail.com', 1,         '1997-12-08',      412345678 );
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+
+
+
 
 --
 -- Table structure for table `History`
@@ -91,9 +139,10 @@ DROP TABLE IF EXISTS `History`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `History` (
-  `id` int NOT NULL,
-  `Venue` varchar(50) DEFAULT NULL,
-  `Date_Time` date DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `UserID` INT NOT NULL,
+  `VenueID` INT NOT NULL,
+  `Date_Time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -102,35 +151,20 @@ CREATE TABLE `History` (
 -- Dumping data for table `History`
 --
 
+ALTER TABLE History
+ADD FOREIGN KEY (UserID) REFERENCES User(id),
+ADD FOREIGN KEY (VenueID) REFERENCES Venue(id);
+
+
 LOCK TABLES `History` WRITE;
 /*!40000 ALTER TABLE `History` DISABLE KEYS */;
+INSERT INTO `History` (id,UserID,VenueID,Date_Time) VALUES (1,1,1, now()); -- User John went to Venue Gongcha at the time...
 /*!40000 ALTER TABLE `History` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `Hotspot`
---
 
-DROP TABLE IF EXISTS `Hotspot`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Hotspot` (
-  `id` int NOT NULL,
-  `Official` INT,
-  `Venue` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `Hotspot`
---
 
-LOCK TABLES `Hotspot` WRITE;
-/*!40000 ALTER TABLE `Hotspot` DISABLE KEYS */;
-INSERT INTO `Hotspot` VALUES (1,NULL,'Subway');
-/*!40000 ALTER TABLE `Hotspot` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `Managers`
@@ -140,14 +174,13 @@ DROP TABLE IF EXISTS `Managers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Managers` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(50) DEFAULT NULL,
   `Last_Name` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
-  `Address` varchar(50) DEFAULT NULL,
+  `AddressID` int NOT NULL,
   `Contact` int NOT NULL,
-  `History` int DEFAULT NULL,
-  `Venue` varchar(50) DEFAULT NULL,
+  `Venue` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Email` (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -157,11 +190,17 @@ CREATE TABLE `Managers` (
 -- Dumping data for table `Managers`
 --
 
+ALTER TABLE Managers
+ADD FOREIGN KEY (AddressID) REFERENCES AddressLine(id),
+ADD FOREIGN KEY (Venue) REFERENCES Venue(id);
+
 LOCK TABLES `Managers` WRITE;
 /*!40000 ALTER TABLE `Managers` DISABLE KEYS */;
-INSERT INTO `Managers` VALUES (1,'Andy','Lam','Andylam3@gmail.com','18 Eastern Parade Ottoway',411223344,NULL,NULL);
+INSERT INTO `Managers` VALUES (1,'Andy','Lam','Andylam3@gmail.com',2,411223344,1); -- Andy is Manager of Gongcha
 /*!40000 ALTER TABLE `Managers` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
 
 --
 -- Table structure for table `Official`
@@ -171,13 +210,12 @@ DROP TABLE IF EXISTS `Official`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Official` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(50) DEFAULT NULL,
   `Last_Name` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
-  `Address` varchar(50) DEFAULT NULL,
+  `AddressID` int NOT NULL,
   `Contact` int NOT NULL,
-  `History` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Email` (`Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -187,36 +225,44 @@ CREATE TABLE `Official` (
 -- Dumping data for table `Official`
 --
 
+ALTER TABLE Official
+ADD FOREIGN KEY (AddressID) REFERENCES AddressLine(id);
+
+
 LOCK TABLES `Official` WRITE;
 /*!40000 ALTER TABLE `Official` DISABLE KEYS */;
-INSERT INTO `Official` VALUES (1,'Ella','Musk','Ellamusk2@gmail.com','23 Rose St Rosewater',498765432,NULL);
+INSERT INTO `Official`
+       (`id`, `First_Name`, `Last_Name`, `Email`,               `AddressID`, `Contact`)
+VALUES (1,    'Ella',       'Musk',      'Ellamusk2@gmail.com',  3,           498765432);
 /*!40000 ALTER TABLE `Official` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
 --
--- Table structure for table `Venue`
+-- Table structure for table `Hotspot`
 --
 
-DROP TABLE IF EXISTS `Venue`;
+DROP TABLE IF EXISTS `Hotspot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Venue` (
-  `id` int NOT NULL,
-  `Name` varchar(50) DEFAULT NULL,
-  `Address` varchar(50) DEFAULT NULL,
-  `Date_Time` date DEFAULT NULL,
+CREATE TABLE `Hotspot` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `VenueID` INT NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Venue`
+-- Dumping data for table `Hotspot`
 --
 
-LOCK TABLES `Venue` WRITE;
-/*!40000 ALTER TABLE `Venue` DISABLE KEYS */;
-INSERT INTO `Venue` VALUES (1,'GongCha','40 Hindley St',NULL);
-/*!40000 ALTER TABLE `Venue` ENABLE KEYS */;
+ALTER TABLE Hotspot
+ADD FOREIGN KEY (VenueID) REFERENCES Venue(id);
+
+LOCK TABLES `Hotspot` WRITE;
+/*!40000 ALTER TABLE `Hotspot` DISABLE KEYS */;
+INSERT INTO `Hotspot` VALUES (1,2); -- VenueID 2 is Subway, which is the hotspot
+/*!40000 ALTER TABLE `Hotspot` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

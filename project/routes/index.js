@@ -5,7 +5,8 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
   user: "",
-  password: ""
+  password: "",
+	database: 'tables'
 });
 
 con.connect(function(err) {
@@ -31,7 +32,10 @@ router.get('/history', function(req,res){
 
 //used to acquire users profile json
 router.get('/profile', function(req,res){
-
+    con.query("SELECT * FROM User", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
 });
 
 //used to update user json
@@ -40,13 +44,19 @@ router.post('/profile/update', function(req,res){
 });
 
 //used to get hotspots for map
-router.get('hotspot', function(req,res){
-
+router.get('/hotspot', function(req,res){
+  con.query("SELECT * FROM Hotspot", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
 });
 
 //used to add more hotspots or to remove
 router.post('/hotspot/update', function(req,res){
-
+  con.query("INSERT INTO `Hotspot` VALUES (2,NULL,'Home');", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
 });
 
 //used to get contact message
@@ -56,12 +66,18 @@ router.post('/contactmessage/new', function(req,res){
 
 //gets address
 router.get('/address', function(req,res){
-
+  con.query("SELECT * FROM AddressLine", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
 });
 
 //create new address
 router.post('/address/new', function(req,res){
-
+  con.query("INSERT INTO AddressLine VALUES (AdelaideUni)", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+    });
 });
 
 //delete address
