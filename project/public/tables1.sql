@@ -38,7 +38,7 @@ CREATE TABLE `AddressLine` (
   `Street_Name` varchar(50) DEFAULT NULL,
   `City` varchar(50) DEFAULT NULL,
   `State` varchar(2) DEFAULT NULL,
-  `ZIP_Code`varchar(4) DEFAULT NULL,
+  `ZIP_Code`INT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
